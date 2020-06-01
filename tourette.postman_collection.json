@@ -1,0 +1,1989 @@
+{
+	"info": {
+		"_postman_id": "496f5c4b-4859-4c05-bf1e-5c1a4c47d3a5",
+		"name": "tourette",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ADMIN",
+			"item": [
+				{
+					"name": "guides",
+					"item": [
+						{
+							"name": "guidesList",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/admin/guides",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"guides"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "guidesGetOne",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/admin/guides/guideId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"guides",
+										"guideId"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "guidesCreate",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/admin/guides",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"guides"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "guidesDelete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/admin/guides/guideId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"guides",
+										"guideId"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "clients",
+					"item": [
+						{
+							"name": "clientsList",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/admin/clients",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"clients"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "categories",
+					"item": [
+						{
+							"name": "categoriesList",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/admin/categories",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "categoriesGetOne",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/admin/categories/categoryId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"categories",
+										"categoryId"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "categoriesCreate",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "photo",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/admin/categories",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "categoriesUpdate",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "photo",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/admin/categories/categoryId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"categories",
+										"categoryId"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "categoriesDelete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/admin/categories/categoryId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"categories",
+										"categoryId"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "cities",
+					"item": [
+						{
+							"name": "citiesList",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/admin/cities",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"cities"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cityGetOne",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/admin/cities/cityId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"cities",
+										"cityId"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cityListPlaces",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/admin/cities/cityId/places",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"cities",
+										"cityId",
+										"places"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cityCreate",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "photo",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "country",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/admin/cities",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"cities"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cityUpdate",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "photo",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/admin/cities/cityId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"cities",
+										"cityId"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cityDelete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/admin/cities/cityId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"cities",
+										"cityId"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "countries",
+					"item": [
+						{
+							"name": "countriesList",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/admin/countries",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"countries"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "countryGetOne",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/admin/countries/countryId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"countries",
+										"countryId"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "countryListCities",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/admin/countries/countryId/cities",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"countries",
+										"countryId",
+										"cities"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "countryListPlaces",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/admin/countries/countryId/places",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"countries",
+										"countryId",
+										"places"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "countryCreate",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "flag",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/admin/countries",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"countries"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "countryDelete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/admin/countries/countryId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"countries",
+										"countryId"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "places",
+					"item": [
+						{
+							"name": "placesList",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/admin/places",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"places"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "placesGetOne",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/admin/places/placeId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"places",
+										"placeId"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "placesGetByGuide",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/admin/places/guide/guideId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"places",
+										"guide",
+										"guideId"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "placeCreate",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "guide",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "polygon",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "photo",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "gallery",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "country",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "category",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/admin/places",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"places"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "placeAddToNest",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/admin/places/placeId/childplace/childplaceId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"places",
+										"placeId",
+										"childplace",
+										"childplaceId"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteFromNest",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/admin/places/placeId/childplace/childplaceId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"places",
+										"placeId",
+										"childplace",
+										"childplaceId"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "placeUpdate",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "guide",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "polygon",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "photo",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "gallery",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "country",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "category",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/admin/places/placeId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"places",
+										"placeId"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "placeDelete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/admin/places/placeId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"places",
+										"placeId"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mediaList",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/admin/places/placeId/media",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"places",
+										"placeId",
+										"media"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mediaGetByType",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/admin/places/placeId/media/mediaType",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"places",
+										"placeId",
+										"media",
+										"mediaType"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mediaAdd",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "type",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "url",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/admin/places/placeId/media",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"places",
+										"placeId",
+										"media"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mediaDelete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/admin/places/placeId/media/mediaId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"places",
+										"placeId",
+										"media",
+										"mediaId"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "placePricesList",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/admin/places/placeId/prices",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"places",
+										"placeId",
+										"prices"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "placesAddPrice",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "full ticket",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "days",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/admin/places/placeId/prices",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"places",
+										"placeId",
+										"prices"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "placesUpdatePrice",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "test ticket",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "9",
+											"type": "text"
+										},
+										{
+											"key": "days",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/admin/places/placeId/prices/priceId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"places",
+										"placeId",
+										"prices",
+										"priceId"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "placesDeletePrice",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/admin/places/placeId/prices/priceId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"places",
+										"placeId",
+										"prices",
+										"priceId"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "GUIDE",
+			"item": [
+				{
+					"name": "countriesList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/guide/countries",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"guide",
+								"countries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "citiesList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/guide/cities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"guide",
+								"cities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "placesList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/guide/places",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"guide",
+								"places"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "placesGetOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/guide/places/placeId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"guide",
+								"places",
+								"placeId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "placesGetByCountry",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/guide/countries/countryId/places",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"guide",
+								"countries",
+								"countryId",
+								"places"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "placesGetByCity",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/guide/cities/cityId/places",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"guide",
+								"cities",
+								"cityId",
+								"places"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "placesGetByGuide",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/guide/places/guide/guideId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"guide",
+								"places",
+								"guide",
+								"guideId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "placeCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "guide",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "polygon",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "gallery",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "country",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/guide/places",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"guide",
+								"places"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "placeUpdate",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "guide",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "polygon",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "gallery",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "country",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/guide/places/:placeId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"guide",
+								"places",
+								":placeId"
+							],
+							"variable": [
+								{
+									"key": "placeId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "placeAddToNest",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/guide/places/placeId/childplace/childplaceId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"guide",
+								"places",
+								"placeId",
+								"childplace",
+								"childplaceId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "placeDelete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/guide/places/placeId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"guide",
+								"places",
+								"placeId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteFromNest",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/guide/places/placeId/childplace/childplaceId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"guide",
+								"places",
+								"placeId",
+								"childplace",
+								"childplaceId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mediaList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/guide/places/placeId/media",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"guide",
+								"places",
+								"placeId",
+								"media"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mediaGetByType",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/guide/places/placeId/media/mediaType",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"guide",
+								"places",
+								"placeId",
+								"media",
+								"mediaType"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mediaAdd",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "url",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/guide/places/placeId/media",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"guide",
+								"places",
+								"placeId",
+								"media"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mediaDelete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/guide/places/placeId/media/mediaId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"guide",
+								"places",
+								"placeId",
+								"media",
+								"mediaId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "placePricesList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/guide/places/placeId/prices",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"guide",
+								"places",
+								"placeId",
+								"prices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "placesAddPrice",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "full ticket",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "days",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/guide/places/placeId/prices",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"guide",
+								"places",
+								"placeId",
+								"prices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "placesUpdatePrice",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "days",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/guide/places/placeId/prices/priceId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"guide",
+								"places",
+								"placeId",
+								"prices",
+								"priceId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "placesDeletePrice",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/guide/places/placeId/prices/priceId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"guide",
+								"places",
+								"placeId",
+								"prices",
+								"priceId"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "CLIENT",
+			"item": [
+				{
+					"name": "countriesList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/client/countries",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"client",
+								"countries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "countryListCities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/client/countries/countryId/cities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"client",
+								"countries",
+								"countryId",
+								"cities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "countryListPlaces",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/client/countries/countryId/places",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"client",
+								"countries",
+								"countryId",
+								"places"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cityListPlaces",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/client/cities/cityId/places",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"client",
+								"cities",
+								"cityId",
+								"places"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPlaceMediaList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/client/places/placeId/media",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"client",
+								"places",
+								"placeId",
+								"media"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPlaceMediaByType",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/client/places/placeId/media/mediaType",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"client",
+								"places",
+								"placeId",
+								"media",
+								"mediaType"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getFavorites",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/client/favorites",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"client",
+								"favorites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addToFavorites",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/client/favorites/placeId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"client",
+								"favorites",
+								"placeId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteFromFavorites",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/client/favorites/placeId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"client",
+								"favorites",
+								"placeId"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
