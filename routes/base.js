@@ -8,6 +8,8 @@ route.get("/", (req, res) => {
     })
 });
 
+const GC = require("../controllers/GalleriesController");
+route.get("/galleries", GC.add);
 route.use("/admin", require("./admin/admin"));
 route.use("/guide", require("./guide/guide"));
 route.use("/client", require("./client/client"));

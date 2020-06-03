@@ -27,7 +27,11 @@ const create = async (req, res) => {
     });
     // places, media, prices to be added after initial creation
     await place.save()
-        .then(() => {
+        .then(async () => {
+            await User.updateOne(
+                { _id: guide },
+                { $push: { places: objId(place._id) } }
+            ).exec();
             res.json({
                 success: true,
                 message: "place created"
@@ -45,7 +49,7 @@ const create = async (req, res) => {
 const nestedAdd = async (req, res) => {
     await Place.updateOne(
         { _id: req.params.placeId },
-        { $push: { places: new mongoose.Types.ObjectId(req.params.childplaceId) } }
+        { $push: { places: objId(req.params.childplaceId) } }
     ).exec();
     res.json({
         success: true,
@@ -56,7 +60,7 @@ const nestedAdd = async (req, res) => {
 const nestedDelete = async (req, res) => {
     await Place.updateOne(
         { _id: req.params.placeId },
-        { $pull: { places: req.params.childplaceId } }
+        { $pull: { places: objId(req.params.childplaceId) } }
     );
     res.json({
         success: true,
@@ -155,7 +159,7 @@ const getByCategory = async (req, res) => {
         category,
         place
     });
-}
+};
 
 const getByGuide = async (req, res) => {
     const guide = await User

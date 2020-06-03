@@ -27,16 +27,19 @@ const userSchema = mongoose.Schema({
         required: true,
         unique: true
     },
-    areas: {
-        type: Array,
-        required: false
+    places: {
+        type: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Place"
+        }],
+        required: function() {return !(this.role === "client")}
     },
     title: {
         type: String,
         required: function() {return !(this.role === "client")}
     },
     favorites: {
-        type: Array,
+        type: mongoose.Schema.Types.Mixed,
         required: function() {return this.role === "client"}
     }
 }, {
@@ -81,7 +84,7 @@ const citySchema = mongoose.Schema({
         required: true
     },
     country: {
-        type: mongoose.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: "Country",
         required: true
     }
@@ -110,7 +113,7 @@ global.Country = mongoose.model("Country", countrySchema);
 
 const placeSchema = mongoose.Schema({
     guide: {
-        type: mongoose.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: "User",
         required: true
     },
@@ -127,11 +130,11 @@ const placeSchema = mongoose.Schema({
         required: true
     },
     polygon: {
-        type: Array,
+        type: mongoose.Schema.Types.Mixed,
         required: true
     },
     places: {
-        type: Array,
+        type: mongoose.Schema.Types.Mixed, // array
         required: false
     },
     photo: {
@@ -139,34 +142,34 @@ const placeSchema = mongoose.Schema({
         required: false
     },
     gallery: {
-        type: Array,
+        type: mongoose.Schema.Types.Mixed,
         required: false
     },
     country: {
-        type: mongoose.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: "Country",
         required: true
     },
     city: {
-        type: mongoose.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: "City",
         required: true
     },
     media: {
-        type: Array,
+        type: mongoose.Schema.Types.Mixed, //array
         required: false
     },
     description: {
-        type: Array,
+        type: String,
         required: true
     },
     category: {
-        type: mongoose.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: "Category",
         required: true
     },
     prices: {
-        type: Array,
+        type: mongoose.Schema.Types.Mixed, //array
         required: false
     }
 }, {

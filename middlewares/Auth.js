@@ -102,7 +102,7 @@ const guideAccess = async (req, res, next) => {
     const place = await Place
         .findById(req.params.placeId, "guide")
         .exec();
-
+    /*if(place.guide.toString() != decodedGuide._id.toString()) to use !== */
     if(place.guide != decodedGuide._id) {
         return res.json({
             success: false,

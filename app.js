@@ -10,11 +10,11 @@ app.use(cors());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
+require("./config/functions");
 require("./config/db");
 app.use(require("./routes/base"));
 
 /*
-* users.areas ???
 * check if categories, countries, cities etc _id's exist
 * MediaController getByType query
 * Schemas, declare array of strings, objects
@@ -25,5 +25,5 @@ app.use(require("./routes/base"));
 * route.use(UsersValidator.place) not working
 * in queries, when to use NEW mongoose.Types
 * AuthValidator password email sanitization
-* then()...catch() with exec()??? / error handling
+* with exec() inside try()...catch() for error handling
 * */

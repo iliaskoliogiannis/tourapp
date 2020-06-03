@@ -2,49 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3eef675-a0e0-48a9-9676-c7a0f887d6b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/AuthController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/middlewares/Auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/admin/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/admin/media.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/admin/prices.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/client/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/guide/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/guide/media.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/guide/prices.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/validators/AuthValidator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/validators/PlacesValidator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/validators/UsersValidator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/validators/result.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/functions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/GalleriesController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/db.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/ClientsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ClientsController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/GuidesController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/GuidesController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/MediaController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/MediaController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/PlacesController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/PlacesController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/PricesController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/PricesController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/passPlaceId.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin/categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin/categories.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin/cities.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin/cities.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin/countries.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin/countries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin/guides.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin/guides.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/Auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/admin/places.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin/places.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin/test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/client/cities.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/client/cities.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/client/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/client/client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/client/countries.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/client/countries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/client/favorites.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/client/favorites.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/client/places.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/client/places.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/guide/cities.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/guide/cities.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/guide/countries.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/guide/countries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/guide/guide.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/guide/guide.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/base.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/guide/places.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/guide/places.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourette.postman_collection.json" beforeDir="false" afterPath="$PROJECT_DIR$/tourette.postman_collection.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,6 +37,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../mongo-first-class-project" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
@@ -114,6 +84,7 @@
       <workItem from="1591098840342" duration="47728000" />
       <workItem from="1591183341579" duration="1832000" />
       <workItem from="1591186711449" duration="479000" />
+      <workItem from="1591194937203" duration="8632000" />
     </task>
     <servers />
   </component>

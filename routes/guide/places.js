@@ -20,7 +20,6 @@ route.put("/:placeId",
     PlacesController.update);
 route.put("/:placeId/childplace/:childplaceId",
     PlacesValidator.params,
-    PlacesValidator.edit,
     Auth.guideAccess,
     PlacesController.nestedAdd
 );

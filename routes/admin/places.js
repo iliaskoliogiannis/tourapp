@@ -29,7 +29,6 @@ route.put("/:placeId",
 );
 route.put("/:placeId/childplace/:childplaceId",
     PlacesValidator.params,
-    PlacesValidator.edit,
     PlacesController.nestedAdd
 );
 route.delete("/:placeId/childplace/:childplaceId",

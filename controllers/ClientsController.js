@@ -13,7 +13,7 @@ const addToFavorites = async (req, res) => {
     await User
         .updateOne(
             { _id: req.client._id },
-            { $push: {favorites: new mongoose.Types.ObjectId(req.params.placeId)} }
+            { $push: {favorites: objId(req.params.placeId)} }
         ).exec();
     res.json({
         success: true,
@@ -25,7 +25,7 @@ const deleteFromFavorites = async (req, res) => {
     await User
         .updateOne(
             { _id: req.params.clientId },
-            { $pull: {favorites: req.params.placeId} }
+            { $pull: {favorites: objId(req.params.placeId)} }
         ).exec();
     res.json({
         success: true,

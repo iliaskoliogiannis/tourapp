@@ -19,7 +19,7 @@ const add = async (req, res) => {
 const deleteOne = async (req, res) => {
     await Place.updateOne(
         { _id: req.params.placeId },
-        { $pull: { media: { _id: new mongoose.Types.ObjectId(req.params.mediaId) }} }
+        { $pull: { media: { _id: objId(req.params.mediaId) }} }
         ).exec();
 
     res.json({
@@ -41,7 +41,7 @@ const list = async (req, res) => {
 const getByType = async (req, res) => {
     const place = await Place
         .aggregate([
-            { $match: { _id: new mongoose.Types.ObjectId(req.params.placeId) }},
+            { $match: { _id: objId(req.params.placeId) }},
             { $project: {
                 media: {
                     $filter: {
