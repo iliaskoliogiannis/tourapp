@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+global.mongoose = require("mongoose");
 const bcrypt = require("mongoose-bcrypt");
 
 mongoose.connect(process.env.MONGO_URI, {
@@ -7,9 +7,15 @@ mongoose.connect(process.env.MONGO_URI, {
 });
 
 const userSchema = mongoose.Schema({
+    role: {
+        type: String,
+        required: true,
+        default: "client",
+        enum: ["client", "guide", "admin"]
+    },
     username: {
         type: String,
-        required: true
+        required: function() {return !(this.role === "client")}
     },
     password: {
         type: String,
@@ -21,22 +27,17 @@ const userSchema = mongoose.Schema({
         required: true,
         unique: true
     },
-    role: {
-        type: String,
-        required: true,
-        default: "client",
-        enum: ["client", "guide", "admin"]
-    },
     areas: {
         type: Array,
         required: false
     },
     title: {
         type: String,
-        required: () => {return this.role === "guide"}
+        required: function() {return !(this.role === "client")}
     },
     favorites: {
-        type: Array
+        type: Array,
+        required: function() {return this.role === "client"}
     }
 }, {
     timestamps: true

@@ -1,27 +1,47 @@
 const express = require("express");
 const route = express.Router();
 const PlacesController = require("../../controllers/PlacesController");
-const MediaController = require("../../controllers/MediaController");
-const PricesController = require("../../controllers/PricesController");
+const UsersValidator = require("../../validators/UsersValidator");
+const PlacesValidator = require("../../validators/PlacesValidator");
 
 route.get("/", PlacesController.list);
-route.get("/:placeId", PlacesController.getOne);
-route.get("/guide/:guideId", PlacesController.getByGuide);
-route.post("/", PlacesController.create);
-route.put("/:placeId", PlacesController.update);
-route.put("/:placeId/childplace/:childplaceId", PlacesController.nestedAdd);
-route.delete("/:placeId/childplace/:childplaceId", PlacesController.nestedDelete);
-route.delete("/:placeId", PlacesController.deleteOne);
-/*---- MEDIA ----*/
-//!!!!!---> route.use("/:placeId/media", require("./media");
-route.get("/:placeId/media", MediaController.list);
-route.get("/:placeId/media/:mediaType", MediaController.getByType);
-route.post("/:placeId/media", MediaController.add);
-route.delete("/:placeId/media/:mediaId", MediaController.deleteOne);
-/*---- PRICES ----*/
-route.get("/:placeId/prices", PricesController.list);
-route.post("/:placeId/prices", PricesController.add);
-route.put("/:placeId/prices/:priceId", PricesController.update);
-route.delete("/:placeId/prices/:priceId", PricesController.deleteOne);
+route.get("/:placeId",
+    PlacesValidator.params,
+    PlacesController.getOne
+);
+route.get("/guide/:guideId",
+    UsersValidator.guide,
+    PlacesController.getByGuide
+);
+route.get("/admin/created", PlacesController.getOwnByGuide);
+route.get("/categories/:categoryId",
+    PlacesValidator.params,
+    PlacesController.getByCategory
+);
+route.post("/",
+    PlacesValidator.edit,
+    PlacesController.create
+);
+route.put("/:placeId",
+    PlacesValidator.params,
+    PlacesValidator.edit,
+    PlacesController.update
+);
+route.put("/:placeId/childplace/:childplaceId",
+    PlacesValidator.params,
+    PlacesValidator.edit,
+    PlacesController.nestedAdd
+);
+route.delete("/:placeId/childplace/:childplaceId",
+    PlacesValidator.params,
+    PlacesController.nestedDelete
+);
+route.delete("/:placeId",
+    PlacesValidator.params,
+    PlacesController.deleteOne
+);
+
+route.use("/:placeId/media", require("./media"));
+route.use("/:placeId/prices", require("./prices"));
 
 module.exports = route;

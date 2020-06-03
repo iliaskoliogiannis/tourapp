@@ -1,18 +1,26 @@
 const create = async (req, res) => {
     const guide = new User({
+        role: "guide",
         username: req.body.username,
         password: req.body.password,
         email: req.body.email,
-        role: "guide",
         title: req.body.title
     });
-    await guide.save();
-
-    res.json({
-        success: true,
-        message: "Guide created",
-        guide
-    });
+    await guide.save()
+        .then(() => {
+            res.json({
+                success: true,
+                message: "Guide created",
+                guide
+            })
+        })
+        .catch((error) => {
+            res.json({
+                success: false,
+                message: "Guide not created",
+                error
+            })
+        });
 };
 
 const deleteOne = async (req, res) => {

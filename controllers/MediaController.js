@@ -1,9 +1,6 @@
-const mongoose = require("mongoose");
-const shortid = require("shortid");
-
 const add = async (req, res) => {
     const media = {
-        _id: shortid.generate(),
+        _id: new mongoose.Types.ObjectId,
         name: req.body.name,
         type: req.body.type,
         url: req.body.url
@@ -22,8 +19,8 @@ const add = async (req, res) => {
 const deleteOne = async (req, res) => {
     await Place.updateOne(
         { _id: req.params.placeId },
-        { $pull: {media: {_id: req.params.mediaId}} })
-        .exec();
+        { $pull: { media: { _id: new mongoose.Types.ObjectId(req.params.mediaId) }} }
+        ).exec();
 
     res.json({
         success: true,

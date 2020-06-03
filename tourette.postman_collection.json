@@ -9,6 +9,73 @@
 			"name": "ADMIN",
 			"item": [
 				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8c4eda3b-5803-43c7-b20c-ef0a07e8f1d6",
+										"exec": [
+											"let jsonData = pm.response.json();\r",
+											"let token = jsonData.token;\r",
+											"pm.environment.set('token', token);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "admin@asd.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "passadmin",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/admin/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
 					"name": "guides",
 					"item": [
 						{
@@ -693,6 +760,50 @@
 							"response": []
 						},
 						{
+							"name": "placesGetOwn",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/admin/places/admin/created",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"places",
+										"admin",
+										"created"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "placesGetByCategory",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/admin/places/categories/categoryId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"admin",
+										"places",
+										"categories",
+										"categoryId"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "placeCreate",
 							"request": {
 								"method": "POST",
@@ -700,11 +811,6 @@
 								"body": {
 									"mode": "urlencoded",
 									"urlencoded": [
-										{
-											"key": "guide",
-											"value": "",
-											"type": "text"
-										},
 										{
 											"key": "name",
 											"value": "",
@@ -821,11 +927,6 @@
 								"body": {
 									"mode": "urlencoded",
 									"urlencoded": [
-										{
-											"key": "guide",
-											"value": "",
-											"type": "text"
-										},
 										{
 											"key": "name",
 											"value": "",
@@ -1155,11 +1256,108 @@
 					"_postman_isSubFolder": true
 				}
 			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "1f698332-cbfe-409f-a83f-3305f938c706",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "90ec9d4a-19cf-4d6e-89a3-801101c84634",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
 			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "GUIDE",
 			"item": [
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3e2cbb0d-136c-4429-b073-7dfa0bb2c051",
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"let token = jsonData.token;\r",
+									"pm.environment.set('token', token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "janedoe@asd.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "converge",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/guide/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"guide",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
 				{
 					"name": "countriesList",
 					"request": {
@@ -1286,12 +1484,34 @@
 					"response": []
 				},
 				{
-					"name": "placesGetByGuide",
+					"name": "placesGetByCategory",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/guide/places/guide/guideId",
+							"raw": "http://localhost:3000/guide/places/categories/categoryId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"guide",
+								"places",
+								"categories",
+								"categoryId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "placesGetOwn",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/guide/places/guide/created",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1301,7 +1521,7 @@
 								"guide",
 								"places",
 								"guide",
-								"guideId"
+								"created"
 							]
 						}
 					},
@@ -1315,11 +1535,6 @@
 						"body": {
 							"mode": "urlencoded",
 							"urlencoded": [
-								{
-									"key": "guide",
-									"value": "",
-									"type": "text"
-								},
 								{
 									"key": "name",
 									"value": "",
@@ -1390,11 +1605,6 @@
 						"body": {
 							"mode": "urlencoded",
 							"urlencoded": [
-								{
-									"key": "guide",
-									"value": "",
-									"type": "text"
-								},
 								{
 									"key": "name",
 									"value": "",
@@ -1772,11 +1982,271 @@
 					"response": []
 				}
 			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "5f9bc7b8-c761-406f-8a14-de3d4780727d",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "600a1b6e-07e7-4ab9-bce5-6f9912eabace",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
 			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "CLIENT",
 			"item": [
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "dc4b0405-2784-4750-842d-6337854ad8e0",
+										"exec": [
+											"let jsonData = pm.response.json();\r",
+											"let token = jsonData.token;\r",
+											"pm.environment.set('token', token);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "client1@asd.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "passclient1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/client/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"client",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "register",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "16f2e614-baff-4e85-be0e-d8934bfc2da7",
+										"exec": [
+											"let jsonData = pm.response.json();\r",
+											"let token = jsonData.token;\r",
+											"pm.environment.set('token', token);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/client/auth/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"client",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "favorites",
+					"item": [
+						{
+							"name": "getFavorites",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/client/favorites",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"client",
+										"favorites"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addToFavorites",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/client/favorites/placeId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"client",
+										"favorites",
+										"placeId"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteFromFavorites",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/client/favorites/placeId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"client",
+										"favorites",
+										"placeId"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "149fabb4-970a-4059-baee-3ad926077065",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "2145ab3c-ebcc-4353-bf66-ad38f48440d7",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
 				{
 					"name": "countriesList",
 					"request": {
@@ -1836,6 +2306,48 @@
 								"countries",
 								"countryId",
 								"places"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "placesList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/client/places",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"client",
+								"places"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "placesGetByCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/client/places/categories/categoryId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"client",
+								"places",
+								"categories",
+								"categoryId"
 							]
 						}
 					},
@@ -1907,82 +2419,31 @@
 						}
 					},
 					"response": []
-				},
-				{
-					"name": "getFavorites",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/client/favorites",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"client",
-								"favorites"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "addToFavorites",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/client/favorites/placeId",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"client",
-								"favorites",
-								"placeId"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "deleteFromFavorites",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/client/favorites/placeId",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"client",
-								"favorites",
-								"placeId"
-							]
-						}
-					},
-					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "7a0ecb2c-f124-4fd8-8129-6aaf47f7e8c3",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		},
 		{
-			"name": "test",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": ""
-				}
-			},
-			"response": []
+			"listen": "test",
+			"script": {
+				"id": "4a78ff82-25d5-4d29-a36b-e390c63855fb",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	],
 	"protocolProfileBehavior": {}

@@ -1,9 +1,19 @@
-// guide._id shall be passed through middleware: req.guideId
-
 const create = async (req, res) => {
+    let guide;
+    if(req.admin) {
+        guide = req.admin._id;
+    } else if(req.guide) {
+        guide = req.guide._id;
+    } else {
+        return json({
+            success: false,
+            message: "invalid role"
+        });
+    }
+
     let alias = req.body.name.toLowerCase().replace(/ /g, "-");
     const place = new Place({
-        guide: req.body.guide, // req.guideId
+        guide: guide,
         name: req.body.name,
         alias,
         address: req.body.address,
@@ -15,18 +25,27 @@ const create = async (req, res) => {
         description: req.body.description,
         category: req.body.category
     });
-    // places, media, prices after initial creation
-    await place.save();
-    res.json({
-        success: true,
-        message: "place created"
-    });
+    // places, media, prices to be added after initial creation
+    await place.save()
+        .then(() => {
+            res.json({
+                success: true,
+                message: "place created"
+            });
+        })
+        .catch((error) => {
+            res.json({
+                success: false,
+                message: "place not created",
+                error
+            })
+        });
 };
 
 const nestedAdd = async (req, res) => {
     await Place.updateOne(
         { _id: req.params.placeId },
-        { $push: { places: req.params.childplaceId } }
+        { $push: { places: new mongoose.Types.ObjectId(req.params.childplaceId) } }
     ).exec();
     res.json({
         success: true,
@@ -124,12 +143,52 @@ const getByCountry = async (req, res) => {
     });
 };
 
+const getByCategory = async (req, res) => {
+    const category = await Category
+        .findById(req.params.categoryId)
+        .exec();
+    const place = await Place
+        .find({ category: req.params.categoryId })
+        .exec();
+    res.json({
+        success: true,
+        category,
+        place
+    });
+}
+
 const getByGuide = async (req, res) => {
     const guide = await User
         .findById(req.params.guideId)
         .exec();
     const places = await Place
         .find({ guide: req.params.guideId })
+        .exec();
+    res.json({
+        success: true,
+        guide,
+        places
+    });
+};
+
+const getOwnByGuide = async (req, res) => {
+    let g;
+    if(req.admin) {
+        g = req.admin._id;
+    } else if(req.guide) {
+        g = req.guide._id;
+    } else {
+        return json({
+            success: false,
+            message: "invalid role"
+        });
+    }
+
+    const guide = await User
+        .findById(g)
+        .exec();
+    const places = await Place
+        .find({ guide: g })
         .exec();
     res.json({
         success: true,
@@ -148,7 +207,9 @@ module.exports = {
     getOne,
     getByCity,
     getByCountry,
-    getByGuide
+    getByCategory,
+    getByGuide,
+    getOwnByGuide
 };
 
 /*add feature by who it was created*/

@@ -18,9 +18,12 @@ app.use(require("./routes/base"));
 * check if categories, countries, cities etc _id's exist
 * MediaController getByType query
 * Schemas, declare array of strings, objects
-* pass req.params from root route (media, prices)
 * Media, Prices list -> simpler response
 * db.places save _id or object into places[] for children documents
-* when deleting place, delete its id from all fields (softdelete?)
-* error handling
+* when deleting place, delete its id from all fields (soft delete???)
+* routes how to tell places/:placeId from places/guides
+* route.use(UsersValidator.place) not working
+* in queries, when to use NEW mongoose.Types
+* AuthValidator password email sanitization
+* then()...catch() with exec()??? / error handling
 * */

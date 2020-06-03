@@ -1,8 +1,6 @@
-const shortid = require("shortid");
-
 const add = async (req, res) => {
     const price = {
-        _id: shortid.generate(),
+        _id: new mongoose.Types.ObjectId,
         name: req.body.name,
         price: req.body.price,
         days: req.body.days
@@ -19,7 +17,7 @@ const add = async (req, res) => {
 
 const update = async (req, res) => {
     await Place.updateOne(
-        { _id: req.params.placeId, "prices._id": req.params.priceId },
+        { _id: req.params.placeId, "prices._id": new mongoose.Types.ObjectId(req.params.priceId) },
         { $set: {
                 "prices.$.name": req.body.name,
                 "prices.$.price": req.body.price,
@@ -36,8 +34,9 @@ const update = async (req, res) => {
 const deleteOne = async (req, res) => {
     await Place.updateOne(
         { _id: req.params.placeId },
-        { $pull: { prices: {_id: req.params.priceId}} }
-    ).exec();
+        { $pull: { prices: { _id: mongoose.Types.ObjectId(req.params.priceId) }} }
+        ).exec();
+
     res.json({
         success: true,
         message: "price deleted"

@@ -9,10 +9,11 @@ const list = async (req, res) => {
 };
 
 const addToFavorites = async (req, res) => {
+    console.log("client ", req.client._id);
     await User
         .updateOne(
-            { _id: req.params.clientId },
-            { $push: {favorites: req.params.placeId} }
+            { _id: req.client._id },
+            { $push: {favorites: new mongoose.Types.ObjectId(req.params.placeId)} }
         ).exec();
     res.json({
         success: true,
@@ -34,7 +35,7 @@ const deleteFromFavorites = async (req, res) => {
 
 const listFavorites = async (req, res) => {
     const favorites = await User
-        .findById(req.params.clientId, "favorites")
+        .findById(req.client._id, "favorites")
         .populate("places")
         .exec();
     res.json({
