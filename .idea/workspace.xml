@@ -4,31 +4,8 @@
     <list default="true" id="f3eef675-a0e0-48a9-9676-c7a0f887d6b9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/db.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/ClientsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ClientsController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/GalleriesController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/GalleriesController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/PlacesController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/PlacesController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/PricesController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/PricesController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/Auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin/categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin/categories.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin/cities.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin/cities.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin/countries.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin/countries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin/guides.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin/guides.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin/media.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin/media.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin/places.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin/places.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin/prices.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin/prices.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/base.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/client/cities.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/client/cities.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/client/countries.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/client/countries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/client/favorites.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/client/favorites.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/client/places.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/client/places.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/guide/cities.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/guide/cities.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/guide/countries.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/guide/countries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/guide/media.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/guide/media.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/guide/places.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/guide/places.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/guide/prices.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/guide/prices.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validators/PlacesValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/validators/ReqValidator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validators/UsersValidator.js" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -104,6 +81,7 @@
       <workItem from="1591242649339" duration="2769000" />
       <workItem from="1591267054362" duration="15958000" />
       <workItem from="1591788869650" duration="174000" />
+      <workItem from="1591800091602" duration="6256000" />
     </task>
     <servers />
   </component>

@@ -32,10 +32,20 @@ const add = async (req, res) => {
 
 const rearrange = async (req, res) => {
 
+    function galleryImg (photo, position) {
+        this.photo = photo;
+        this.position = position;
+    }
+    const gallery = []; // rewrite with less
+    for (let p of req.body.gallery) {
+        const newGalleryImg = new galleryImg(p.photo, p.position);
+        gallery.push(newGalleryImg);
+    }
+
     try {
-        await Place.updateOne(
+        await Place.update(
             { _id: req.params.placeId },
-            {}
+            { $set: { gallery: gallery } } // { $set: { gallery: req.body.gallery } }
             )
             .exec();
     } catch (error) {
@@ -94,6 +104,30 @@ const deleteOne = async (req, res) => {
     });
 };
 
+// $pullAll
+const deleteMany = async (req, res) => {
+    //req.body = ["id1", "id2",...]
+    const images = req.body.map(img => objId(img));
+
+    try {
+        await Place.updateOne(
+            { _id: req.params.placeId },
+            { $pull: { gallery: { _id: {$in: images}} }}
+        ).exec();
+    } catch (error) {
+        return res.json({
+            success: false,
+            error: error.name,
+            message: error.errmsg
+        });
+    }
+
+    res.json({
+        success: true,
+        message: images.length + " gallery images deleted"
+    });
+};
+
 const list = async (req, res) => {
     let place;
     try {
@@ -118,5 +152,6 @@ module.exports = {
     add,
     rearrange,
     deleteOne,
+    deleteMany,
     list
 };

@@ -15,10 +15,6 @@ require("./config/db");
 app.use(require("./routes/base"));
 
 /*
-* Media, Prices list -> simpler response
 * when deleting place, delete its id from all fields (soft delete???)
 * routes how to tell places/:placeId from places/guides
-* route.use(UsersValidator.place) not working
-* AuthValidator password email sanitization
-* with exec() inside try()...catch() for error handling
 * */
