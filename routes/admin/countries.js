@@ -3,13 +3,13 @@ const route = express.Router();
 const CountriesController = require("../../controllers/CountriesController");
 const CitiesController = require("../../controllers/CitiesController");
 const PlacesController = require("../../controllers/PlacesController");
-const UsersValidator = require("../../validators/UsersValidator");
+const ReqValidator = require("../../validators/ReqValidator");
 
 route.get("/", CountriesController.list);
-route.get("/:countryId", UsersValidator.country, CountriesController.getOne);
-route.get("/:countryId/cities", UsersValidator.country, CitiesController.getByCountry);
-route.get("/:countryId/places", UsersValidator.country, PlacesController.getByCountry);
+route.get("/:countryId", ReqValidator.paramsCountry, CountriesController.getOne);
+route.get("/:countryId/cities", ReqValidator.paramsCountry, CitiesController.getByCountry);
+route.get("/:countryId/places", ReqValidator.paramsCountry, PlacesController.getByCountry);
 route.post("/", CountriesController.create);
-route.delete("/:countryId", UsersValidator.country, CountriesController.deleteOne);
+route.delete("/:countryId", ReqValidator.paramsCountry, CountriesController.deleteOne);
 
 module.exports = route;

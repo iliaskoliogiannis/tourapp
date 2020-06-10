@@ -93,6 +93,12 @@ const deleteOne = async (req, res) => {
     await Place
         .deleteOne({_id: req.params.placeId})
         .exec();
+    await User
+        .updateOne(
+            { _id: req.guide._id },
+            { $pull: { places: objId(req.params.placeId) } }
+        )
+        .exec();
     res.json({
         success: true,
         message: "place deleted"
@@ -161,6 +167,7 @@ const getByCategory = async (req, res) => {
     });
 };
 
+// admin/guide/:guideId
 const getByGuide = async (req, res) => {
     const guide = await User
         .findById(req.params.guideId)
@@ -175,7 +182,8 @@ const getByGuide = async (req, res) => {
     });
 };
 
-const getOwnByGuide = async (req, res) => {
+// admin/places/admin/created or guide/places/guide/created
+const getCreatedByGuide = async (req, res) => {
     let g;
     if(req.admin) {
         g = req.admin._id;
@@ -213,7 +221,6 @@ module.exports = {
     getByCountry,
     getByCategory,
     getByGuide,
-    getOwnByGuide
+    getCreatedByGuide
 };
 
-/*add feature by who it was created*/

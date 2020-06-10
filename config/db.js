@@ -28,10 +28,8 @@ const userSchema = mongoose.Schema({
         unique: true
     },
     places: {
-        type: [{
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Place"
-        }],
+        type: mongoose.Schema.Types.Mixed,
+        ref: "Place",
         required: function() {return !(this.role === "client")}
     },
     title: {
@@ -40,6 +38,7 @@ const userSchema = mongoose.Schema({
     },
     favorites: {
         type: mongoose.Schema.Types.Mixed,
+        ref: "Place",
         required: function() {return this.role === "client"}
     }
 }, {
@@ -134,7 +133,8 @@ const placeSchema = mongoose.Schema({
         required: true
     },
     places: {
-        type: mongoose.Schema.Types.Mixed, // array
+        type: mongoose.Schema.Types.Mixed,
+        ref: "Place",
         required: false
     },
     photo: {
@@ -175,4 +175,4 @@ const placeSchema = mongoose.Schema({
 }, {
     timestamps: true
 });
-global.Place = mongoose.model("place", placeSchema);
+global.Place = mongoose.model("Place", placeSchema);

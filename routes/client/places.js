@@ -3,13 +3,13 @@ const route = express.Router();
 const PlacesController = require("../../controllers/PlacesController");
 const MediaController = require("../../controllers/MediaController");
 const PricesController = require("../../controllers/PricesController");
-const PlacesValidator = require("../../validators/PlacesValidator");
+const ReqValidator = require("../../validators/ReqValidator");
 
 route.get("/", PlacesController.list);
-route.get("/:placeId", PlacesValidator.params, PlacesController.getOne);
-route.get("/categories/:categoryId", PlacesValidator.params, PlacesController.getByCategory);
-route.get("/:placeId/media", PlacesValidator.params, MediaController.list);
-route.get("/:placeId/media/:mediaType", PlacesValidator.params, MediaController.getByType);
-route.get("/:placeId/prices", PlacesValidator.params, PricesController.list);
+route.get("/:placeId", ReqValidator.paramsPlace, PlacesController.getOne);
+route.get("/categories/:categoryId", ReqValidator.paramsPlace, PlacesController.getByCategory);
+route.get("/:placeId/media", ReqValidator.paramsPlace, MediaController.list);
+route.get("/:placeId/media/:mediaType", ReqValidator.paramsPlace, MediaController.getByType);
+route.get("/:placeId/prices", ReqValidator.paramsPlace, PricesController.list);
 
 module.exports = route;

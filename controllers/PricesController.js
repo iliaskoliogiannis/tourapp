@@ -17,7 +17,7 @@ const add = async (req, res) => {
 
 const update = async (req, res) => {
     await Place.updateOne(
-        { _id: req.params.placeId, "prices._id": new mongoose.Types.ObjectId(req.params.priceId) },
+        { _id: req.params.placeId, "prices._id": objId(req.params.priceId) },
         { $set: {
                 "prices.$.name": req.body.name,
                 "prices.$.price": req.body.price,
@@ -34,7 +34,7 @@ const update = async (req, res) => {
 const deleteOne = async (req, res) => {
     await Place.updateOne(
         { _id: req.params.placeId },
-        { $pull: { prices: { _id: mongoose.Types.ObjectId(req.params.priceId) }} }
+        { $pull: { prices: { _id: objId(req.params.priceId) }} }
         ).exec();
 
     res.json({

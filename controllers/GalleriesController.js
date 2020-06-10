@@ -1,38 +1,122 @@
 const add = async (req, res) => {
-    const galleryImg = ( _id ,photo, position) => {
+
+    function galleryImg (_id, photo, position) {
             this._id = _id;
             this.photo = photo;
             this.position = position;
-    };
+    }
     const gallery = [];
-    for (let p of req.params.gallery) {
+    for (let p of req.body.gallery) {
         const newGalleryImg = new galleryImg(new mongoose.Types.ObjectId, p.photo, p.position);
         gallery.push(newGalleryImg);
     }
-    await Place.updateOne(
-        { _id: req.params.placeId },
-        { $addToSet: { gallery: gallery } }
-    ).exec();
+
+    try {
+        await Place.updateOne(
+            { _id: req.params.placeId },
+            { $push: { gallery: {$each: gallery} } }
+        ).exec();
+    } catch (error) {
+        return res.json({
+            success: false,
+            error: error.name,
+            message: error.errmsg
+        });
+    }
 
     res.json({
         success: true,
-        message: "media added"
+        message: "gallery added"
     });
 };
 
-const deleteOne = async (req, res) => {
-    await Place.updateOne(
-        { _id: req.params.placeId },
-        { $pull: { gallery: { _id: objId(req.params.galleryImgId) }} }
-    ).exec();
+const rearrange = async (req, res) => {
+
+    try {
+        await Place.updateOne(
+            { _id: req.params.placeId },
+            {}
+            )
+            .exec();
+    } catch (error) {
+        return res.json({
+            success: false,
+            error: error.name,
+            message: error.errmsg
+        });
+    }
 
     res.json({
         success: true,
-        message: "media added"
+        message: "Gallery rearranged"
+    });
+};
+
+// const rearrange = async (req, res) => {
+//
+//     try {
+//         await Place.updateMany(
+//             { _id: req.params.placeId, $each: { "gallery._id": new mongoose.Types.ObjectId(req.body._id) } },
+//             { $set: { "gallery.$.position": req.body.position }},
+//             {"multi": true}
+//         ).exec();
+//     } catch (error) {
+//         return res.json({
+//             success: false,
+//             error: error.name,
+//             message: error.errmsg
+//         });
+//     }
+//
+//     res.json({
+//         success: true,
+//         message: "Gallery rearranged"
+//     });
+// };
+
+const deleteOne = async (req, res) => {
+    try {
+        await Place.updateOne(
+            { _id: req.params.placeId },
+            { $pull: { gallery: { _id: objId(req.params.galleryImgId) }} }
+        ).exec();
+    } catch (error) {
+        return res.json({
+            success: false,
+            error: error.name,
+            message: error.errmsg
+        });
+    }
+
+    res.json({
+        success: true,
+        message: "gallery img deleted"
+    });
+};
+
+const list = async (req, res) => {
+    let place;
+    try {
+        place = await Place
+            .findById(req.params.placeId, "gallery")
+            .exec();
+    } catch (error) {
+        return res.json({
+            success: false,
+            error: error.name,
+            message: error.errmsg
+        });
+    }
+
+    res.json({
+        success: true,
+        place
     });
 };
 
 module.exports = {
     add,
-    deleteOne
+    rearrange,
+    deleteOne,
+    list
 };

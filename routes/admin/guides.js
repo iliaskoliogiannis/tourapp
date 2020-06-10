@@ -1,12 +1,12 @@
 const express = require("express");
 const route = express.Router();
 const GuidesController = require("../../controllers/GuidesController");
-const UsersValidator = require("../../validators/UsersValidator");
+const ReqValidator = require("../../validators/ReqValidator");
 const AuthValidator = require("../../validators/AuthValidator");
 
 route.get("/", GuidesController.list);
-route.get("/:guideId", UsersValidator.guide, GuidesController.getOne);
+route.get("/:guideId", ReqValidator.paramsGuide, GuidesController.getOne);
 route.post("/", AuthValidator.register, GuidesController.create);
-route.delete("/:guideId", UsersValidator.guide, GuidesController.deleteOne);
+route.delete("/:guideId", ReqValidator.paramsGuide, GuidesController.deleteOne);
 
 module.exports = route;

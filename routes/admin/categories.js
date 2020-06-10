@@ -1,12 +1,12 @@
 const express = require("express");
 const route = express.Router();
 const CategoriesController = require("../../controllers/CategoriesController");
-const UsersValidator = require("../../validators/UsersValidator");
+const ReqValidator = require("../../validators/ReqValidator");
 
 route.get("/", CategoriesController.list);
-route.get("/:categoryId", UsersValidator.category, CategoriesController.getOne);
+route.get("/:categoryId", ReqValidator.paramsCategory, CategoriesController.getOne);
 route.post("/", CategoriesController.create);
-route.put("/:categoryId", UsersValidator.category, CategoriesController.update);
+route.put("/:categoryId", ReqValidator.paramsCategory, CategoriesController.update);
 route.delete("/:categoryId", CategoriesController.deleteOne);
 
 module.exports = route;

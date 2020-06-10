@@ -1,7 +1,27 @@
 const { check } = require("express-validator");
 const checkErrors = require("./result");
 
-const params = [
+const paramsGuide = [
+    check("guideId").isMongoId().withMessage("Provide a valid MongoId for guide"),
+    checkErrors
+];
+
+const paramsCategory = [
+    check("categoryId").isMongoId().withMessage("Provide a valid MongoId for category"),
+    checkErrors
+];
+
+const paramsCountry = [
+    check("countryId").isMongoId().withMessage("Provide a valid MongoId for country"),
+    checkErrors
+];
+
+const paramsCity = [
+    check("cityId").isMongoId().withMessage("Provide a valid MongoId for city"),
+    checkErrors
+];
+
+const paramsPlace = [
     check("placeId")
         .optional()
         .isMongoId()
@@ -10,10 +30,22 @@ const params = [
         .optional()
         .isMongoId()
         .withMessage("Provide a valid MongoId for category"),
+    check("guideId")
+        .optional()
+        .isMongoId()
+        .withMessage("Provide a valid MongoId for guide"),
     check("childplaceId")
         .optional()
         .isMongoId()
         .withMessage("Provide a valid MongoId for childplace"),
+    check("mediaType")
+        .optional()
+        .isIn(["audio", "video"])
+        .withMessage("Provide  valid media type"),
+    checkErrors
+];
+
+const paramsMedia = [
     check("mediaId")
         .optional()
         .isMongoId()
@@ -22,14 +54,17 @@ const params = [
         .optional()
         .isIn(["audio", "video"])
         .withMessage("Provide  valid media type"),
+    checkErrors
+];
+
+const paramsPrices = [
     check("priceId")
-        .optional()
         .isMongoId()
         .withMessage("Provide a valid MongoId for price"),
     checkErrors
 ];
 
-const edit = [
+const bodyPlace = [
     check("name")
         .not().isEmpty({ ignore_whitespace: true })
         .matches(/^[a-zα-ω. ]+$/i)
@@ -65,7 +100,7 @@ const edit = [
     checkErrors
 ];
 
-const media = [
+const bodyMedia = [
     check("name")
         .matches(/^[a-zα-ω0-9 ]+$/i)
         .withMessage("Provide only alphabetical characters for name"),
@@ -78,7 +113,7 @@ const media = [
     checkErrors
 ];
 
-const prices = [
+const bodyPrices = [
     check("name")
         .matches(/^[a-zα-ω ]+$/i)
         .withMessage("Provide only alphabetical(el, en) characters for name"),
@@ -92,10 +127,16 @@ const prices = [
 ];
 
 module.exports = {
-    params,
-    edit,
-    media,
-    prices
+    paramsGuide,
+    paramsCategory,
+    paramsCountry,
+    paramsCity,
+    paramsPlace,
+    paramsMedia,
+    paramsPrices,
+    bodyPlace,
+    bodyMedia,
+    bodyPrices
 };
 
 // add greek letters and capitals

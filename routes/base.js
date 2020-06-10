@@ -9,7 +9,10 @@ route.get("/", (req, res) => {
 });
 
 const GC = require("../controllers/GalleriesController");
-route.get("/galleries", GC.add);
+route.get("/:placeId/galleries", GC.list);
+route.post("/:placeId/galleries", GC.add);
+route.put("/:placeId/galleries", GC.rearrange);
+route.delete("/:placeId/galleries/:galleryImgId", GC.deleteOne);
 route.use("/admin", require("./admin/admin"));
 route.use("/guide", require("./guide/guide"));
 route.use("/client", require("./client/client"));

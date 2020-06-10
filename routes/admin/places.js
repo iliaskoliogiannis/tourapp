@@ -1,46 +1,45 @@
 const express = require("express");
 const route = express.Router();
 const PlacesController = require("../../controllers/PlacesController");
-const UsersValidator = require("../../validators/UsersValidator");
-const PlacesValidator = require("../../validators/PlacesValidator");
+const ReqValidator = require("../../validators/ReqValidator");
 
 route.get("/", PlacesController.list);
 route.get("/:placeId",
-    PlacesValidator.params,
+    ReqValidator.paramsPlace,
     PlacesController.getOne
 );
 route.get("/guide/:guideId",
-    UsersValidator.guide,
+    ReqValidator.paramsPlace,
     PlacesController.getByGuide
 );
-route.get("/admin/created", PlacesController.getOwnByGuide);
+route.get("/admin/created", PlacesController.getCreatedByGuide);
 route.get("/categories/:categoryId",
-    PlacesValidator.params,
+    ReqValidator.paramsPlace,
     PlacesController.getByCategory
 );
 route.post("/",
-    PlacesValidator.edit,
+    ReqValidator.bodyPlace,
     PlacesController.create
 );
 route.put("/:placeId",
-    PlacesValidator.params,
-    PlacesValidator.edit,
+    ReqValidator.paramsPlace,
+    ReqValidator.bodyPlace,
     PlacesController.update
 );
 route.put("/:placeId/childplace/:childplaceId",
-    PlacesValidator.params,
+    ReqValidator.paramsPlace,
     PlacesController.nestedAdd
 );
 route.delete("/:placeId/childplace/:childplaceId",
-    PlacesValidator.params,
+    ReqValidator.paramsPlace,
     PlacesController.nestedDelete
 );
 route.delete("/:placeId",
-    PlacesValidator.params,
+    ReqValidator.paramsPlace,
     PlacesController.deleteOne
 );
 
-route.use("/:placeId/media", require("./media"));
-route.use("/:placeId/prices", require("./prices"));
+route.use("/:placeId/media", ReqValidator.paramsPlace, require("./media"));
+route.use("/:placeId/prices", ReqValidator.paramsPlace, require("./prices"));
 
 module.exports = route;

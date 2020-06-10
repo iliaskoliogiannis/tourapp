@@ -24,7 +24,7 @@ const addToFavorites = async (req, res) => {
 const deleteFromFavorites = async (req, res) => {
     await User
         .updateOne(
-            { _id: req.params.clientId },
+            { _id: req.client._id },
             { $pull: {favorites: objId(req.params.placeId)} }
         ).exec();
     res.json({
@@ -34,14 +34,22 @@ const deleteFromFavorites = async (req, res) => {
 };
 
 const listFavorites = async (req, res) => {
-    const favorites = await User
-        .findById(req.client._id, "favorites")
-        .populate("places")
-        .exec();
-    res.json({
-        success: true,
-        favorites
-    })
+    try {
+        const place = await User
+            .findById(req.client._id, "favorites")
+            .populate("favorites")
+            .exec();
+
+        res.json({
+            success: true,
+            place
+        });
+    } catch (error) {
+        res.json({
+            success: false,
+            error: error.name
+        });
+    }
 };
 
 module.exports = {

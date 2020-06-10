@@ -147,6 +147,7 @@ const client = async (req, res, next) => {
     }
 
     req.client = client;
+
     next();
 
 };

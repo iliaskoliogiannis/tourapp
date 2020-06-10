@@ -2422,6 +2422,105 @@
 				}
 			],
 			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "listGallery",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/5ed70435dd1ff701a877896f/galleries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"5ed70435dd1ff701a877896f",
+						"galleries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addGallery",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"gallery\": [\n\t\t{\n\t\t\t\"photo\": \"photo1\",\n\t\t\t\"position\": 1\n\t\t},\n\t\t{\n\t\t\t\"photo\": \"photo2\",\n\t\t\t\"position\": 2\n\t\t},\n\t\t{\n\t\t\t\"photo\": \"photo3\",\n\t\t\t\"position\": 3\n\t\t},\n\t\t{\n\t\t\t\"photo\": \"photo4\",\n\t\t\t\"position\": 4\n\t\t}\n\t]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/5ed70435dd1ff701a877896f/galleries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"5ed70435dd1ff701a877896f",
+						"galleries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "rearrangeGallery",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n            {\r\n                \"_id\": \"5ed8e4545dcf2f1500bdd9a6\",\r\n                \"photo\": \"photo1\",\r\n                \"position\": 11\r\n            },\r\n            {\r\n                \"_id\": \"5ed8e4545dcf2f1500bdd9a7\",\r\n                \"photo\": \"photo2\",\r\n                \"position\": 22\r\n            },\r\n            {\r\n                \"_id\": \"5ed8e4545dcf2f1500bdd9a8\",\r\n                \"photo\": \"photo3\",\r\n                \"position\": 33\r\n            },\r\n            {\r\n                \"_id\": \"5ed8e4545dcf2f1500bdd9a9\",\r\n                \"photo\": \"photo4\",\r\n                \"position\": 44\r\n            }\r\n        ]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/5ed70435dd1ff701a877896f/galleries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"5ed70435dd1ff701a877896f",
+						"galleries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteFromGallery",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/5ed70435dd1ff701a877896f/galleries/photoId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"5ed70435dd1ff701a877896f",
+						"galleries",
+						"photoId"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [
