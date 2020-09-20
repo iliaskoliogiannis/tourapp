@@ -41,5 +41,6 @@ route.delete("/:placeId",
 
 route.use("/:placeId/media", ReqValidator.paramsPlace, require("./media"));
 route.use("/:placeId/prices", ReqValidator.paramsPlace, require("./prices"));
+route.use("/:placeId/galleries", ReqValidator.paramsPlace, require("./galleries"));
 
 module.exports = route;

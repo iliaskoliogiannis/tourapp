@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3eef675-a0e0-48a9-9676-c7a0f887d6b9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/routes/guide/galleries.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/GalleriesController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/GalleriesController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/base.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/guide/places.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/guide/places.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +28,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mongo-first-class-project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tourapp - Copy" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
@@ -82,6 +82,15 @@
       <workItem from="1591267054362" duration="15958000" />
       <workItem from="1591788869650" duration="174000" />
       <workItem from="1591800091602" duration="6256000" />
+      <workItem from="1591825778795" duration="595000" />
+      <workItem from="1591886048287" duration="666000" />
+      <workItem from="1592489423782" duration="33000" />
+      <workItem from="1592496000242" duration="1282000" />
+      <workItem from="1593227756516" duration="137000" />
+      <workItem from="1593435004448" duration="29000" />
+      <workItem from="1600261694980" duration="55000" />
+      <workItem from="1600619621516" duration="1087000" />
+      <workItem from="1600621063972" duration="16000" />
     </task>
     <servers />
   </component>
