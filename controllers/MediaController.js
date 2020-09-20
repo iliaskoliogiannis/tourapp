@@ -58,16 +58,6 @@ const getByType = async (req, res) => {
     });
 };
 
-// const getByType = async (req, res) => {
-//     const place = await Place
-//         .findOne({ _id: req.params.placeId }, "media")
-//         .exec();
-//     let media = place.media.filter( m => m.type === req.params.mediaType);
-//     res.json({
-//         success: true,
-//         media
-//     });
-// };
 
 module.exports = {
     add,

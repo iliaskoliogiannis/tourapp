@@ -14,7 +14,3 @@ require("./config/functions");
 require("./config/db");
 app.use(require("./routes/base"));
 
-/*
-* when deleting place, delete its id from all fields (soft delete???)
-* routes how to tell places/:placeId from places/guides
-* */

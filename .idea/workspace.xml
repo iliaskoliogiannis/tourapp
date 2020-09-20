@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3eef675-a0e0-48a9-9676-c7a0f887d6b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/routes/guide/galleries.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/base.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/guide/places.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/guide/places.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/GalleriesController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/GalleriesController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/MediaController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/MediaController.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +28,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tourapp - Copy" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
@@ -91,6 +91,7 @@
       <workItem from="1600261694980" duration="55000" />
       <workItem from="1600619621516" duration="1087000" />
       <workItem from="1600621063972" duration="16000" />
+      <workItem from="1600629571210" duration="72000" />
     </task>
     <servers />
   </component>

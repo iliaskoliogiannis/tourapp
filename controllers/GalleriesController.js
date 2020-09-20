@@ -62,28 +62,6 @@ const rearrange = async (req, res) => {
     });
 };
 
-// const rearrange = async (req, res) => {
-//
-//     try {
-//         await Place.updateMany(
-//             { _id: req.params.placeId, $each: { "gallery._id": new mongoose.Types.ObjectId(req.body._id) } },
-//             { $set: { "gallery.$.position": req.body.position }},
-//             {"multi": true}
-//         ).exec();
-//     } catch (error) {
-//         return res.json({
-//             success: false,
-//             error: error.name,
-//             message: error.errmsg
-//         });
-//     }
-//
-//     res.json({
-//         success: true,
-//         message: "Gallery rearranged"
-//     });
-// };
-
 const deleteOne = async (req, res) => {
     try {
         await Place.updateOne(
